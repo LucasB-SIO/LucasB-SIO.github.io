@@ -35,4 +35,4 @@ Ce dépôt valide les compétences attendues par le référentiel du BTS SIO con
 * `README.md` : Présentation globale du projet (ce fichier).
 
 ---
- **Réalisé par :** LucasB-SIO — 2026
+ **Réalisé par :** LucasB-SIO - 2026

@@ -42,31 +42,31 @@
                         <span class="vlan-id">VLAN 10</span>
                         <h4>VLAN-ADMIN / RH</h4>
                         <p>192.168.10.0/24[cite: 1]</p>
-                        <span class="vlan-desc">Segment direction hautement sécurisé[cite: 1].</span>
+                        <span class="vlan-desc">Segment direction hautement sécurisé.</span>
                     </div>
                     <div class="vlan-card border-it">
                         <span class="vlan-id">VLAN 15</span>
                         <h4>VLAN-IT</h4>
                         <p>192.168.15.0/24[cite: 1]</p>
-                        <span class="vlan-desc">Dédié aux accès SSH et à la sonde PRTG[cite: 1].</span>
+                        <span class="vlan-desc">Dédié aux accès SSH et à la sonde PRTG.</span>
                     </div>
                     <div class="vlan-card border-salaries">
                         <span class="vlan-id">VLAN 30</span>
                         <h4>VLAN-SALARIES</h4>
                         <p>192.168.30.0/24[cite: 1]</p>
-                        <span class="vlan-desc">Zone principale des collaborateurs[cite: 1].</span>
+                        <span class="vlan-desc">Zone principale des collaborateurs.</span>
                     </div>
                     <div class="vlan-card border-transit">
                         <span class="vlan-id">VLAN 20</span>
                         <h4>Transit Freebox</h4>
                         <p>192.168.0.0/24[cite: 1]</p>
-                        <span class="vlan-desc">DMZ d'interconnexion vers le WAN[cite: 1].</span>
+                        <span class="vlan-desc">DMZ d'interconnexion vers le WAN.</span>
                     </div>
                     <div class="vlan-card border-filtre">
                         <span class="vlan-id">VLAN 21</span>
                         <h4>LAN Filtré</h4>
                         <p>Interconnexion</p>
-                        <span class="vlan-desc">Collecte des flux après le pare-feu pivot[cite: 1].</span>
+                        <span class="vlan-desc">Collecte des flux après le pare-feu pivot.</span>
                     </div>
                 </div>
 
@@ -75,28 +75,28 @@
                     <div class="tech-box">
                         <h4>🛠️ Infrastructures Physiques Cisco</h4>
                         <ul>
-                            <li><strong>Cisco 2960 Plus :</strong> Procédure de <em>Password Recovery</em> via console, purge de la mémoire Flash (<code>vlan.dat</code>) et assignation des ports[cite: 1].</li>
-                            <li><strong>Cisco 9300 (Cœur L3) :</strong> Routage inter-VLAN via SVI et routage statique vers Internet[cite: 1].</li>
-                            <li><strong>Spanning-Tree (Rapid-PVST+) :</strong> Élection forcée du Root Bridge (priorité 4096), sécurisation via <strong>PortFast</strong> et <strong>BPDU Guard</strong>[cite: 1].</li>
-                            <li><strong>Sécurité d'Accès :</strong> Filtrage MAC par <strong>Port-Security Sticky</strong> et chiffrement des flux via <strong>SSHv2</strong>[cite: 1].</li>
+                            <li><strong>Cisco 2960 Plus :</strong> Procédure de <em>Password Recovery</em> via console, purge de la mémoire Flash (<code>vlan.dat</code>) et assignation des ports.</li>
+                            <li><strong>Cisco 9300 (Cœur L3) :</strong> Routage inter-VLAN via SVI et routage statique vers Internet.</li>
+                            <li><strong>Spanning-Tree (Rapid-PVST+) :</strong> Élection forcée du Root Bridge (priorité 4096), sécurisation via <strong>PortFast</strong> et <strong>BPDU Guard</strong>.</li>
+                            <li><strong>Sécurité d'Accès :</strong> Filtrage MAC par <strong>Port-Security Sticky</strong> et chiffrement des flux via <strong>SSHv2</strong>.</li>
                         </ul>
                     </div>
 
                     <div class="tech-box">
                         <h4>🔒 Sécurité & Filtrage Avancé</h4>
                         <ul>
-                            <li><strong>Proxmox VE :</strong> Mode <em>VLAN Aware</em> activé pour tagguer les flux 802.1Q des machines virtuelles[cite: 1].</li>
-                            <li><strong>OPNsense & Default Deny :</strong> Cloisonnement strict des flux (DNS 53, Proxy 3128, SSH 22 autorisés, le reste est bloqué)[cite: 1].</li>
-                            <li><strong>Proxy Squid & SSL Bump :</strong> Filtrage par catégories (listes de Toulouse) et déchiffrement des flux HTTPS à la volée (MitM) avec injection automatique du certificat via <code>policies.json</code>[cite: 1].</li>
-                            <li><strong>Bourrage HTML :</strong> Ajustement de la taille des pages de blocage à 750 octets pour forcer l'affichage sur Chrome/Edge[cite: 1].</li>
+                            <li><strong>Proxmox VE :</strong> Mode <em>VLAN Aware</em> activé pour tagguer les flux 802.1Q des machines virtuelles.</li>
+                            <li><strong>OPNsense & Default Deny :</strong> Cloisonnement strict des flux (DNS 53, Proxy 3128, SSH 22 autorisés, le reste est bloqué).</li>
+                            <li><strong>Proxy Squid & SSL Bump :</strong> Filtrage par catégories (listes de Toulouse) et déchiffrement des flux HTTPS à la volée (MitM) avec injection automatique du certificat via <code>policies.json</code>.</li>
+                            <li><strong>Bourrage HTML :</strong> Ajustement de la taille des pages de blocage à 750 octets pour forcer l'affichage sur Chrome/Edge.</li>
                         </ul>
                     </div>
 
                     <div class="tech-box">
                         <h4>📈 Supervision Réseau</h4>
                         <ul>
-                            <li><strong>PRTG Network Monitor :</strong> Intégration sur l'OS hôte pour contourner le verrouillage BIOS (Intel VT-x)[cite: 1].</li>
-                            <li><strong>Protocole SNMP v2c :</strong> Sécurisation par chaîne de communauté personnalisée et déploiement de capteurs clés (Ping, Trafic Trunk, System Health Cisco, RAM)[cite: 1].</li>
+                            <li><strong>PRTG Network Monitor :</strong> Intégration sur l'OS hôte pour contourner le verrouillage BIOS (Intel VT-x)</li>
+                            <li><strong>Protocole SNMP v2c :</strong> Sécurisation par chaîne de communauté personnalisée et déploiement de capteurs clés (Ping, Trafic Trunk, System Health Cisco, RAM).</li>
                         </ul>
                     </div>
                 </div>

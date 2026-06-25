@@ -1,158 +1,244 @@
-/* --- Thème Modern Cyber / Dashboard Tech --- */
+/* --- Design Moderne "Glassmorphism & Glow" --- */
 :root {
-    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-    --card-bg: rgba(30, 41, 59, 0.7);
-    --text-main: #f8fafc;
-    --text-muted: #cbd5e1;
+    --bg-main: #030712;
+    --card-bg: rgba(17, 24, 39, 0.7);
+    --border-light: rgba(255, 255, 255, 0.08);
+    --text-white: #ffffff;
+    --text-gray: #9ca3af;
+    
+    /* Couleurs Thématiques */
     --cyan: #06b6d4;
-    --purple: #a855f7;
+    --purple: #8b5cf6;
     --emerald: #10b981;
-    --border: rgba(255, 255, 255, 0.08);
+    --orange: #f97316;
 }
 
-/* --- Style Général --- */
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: var(--bg-gradient);
-    background-attachment: fixed;
-    color: var(--text-main);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-white);
     margin: 0;
     padding: 0;
-    line-height: 1.7;
+    overflow-x: hidden;
 }
 
-.resume-container {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 0 20px;
+/* Effet de lumière diffuse en arrière-plan */
+.bg-glow {
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 100%);
+    z-index: -1;
+    pointer-events: none;
 }
 
-/* --- Header façon Profil Pro --- */
-header {
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(12px);
-    padding: 40px;
-    border-radius: 24px;
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* --- HERO HEADER --- */
+.hero-header {
     text-align: center;
-    border: 1px solid var(--border);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
-header h1 {
-    font-size: 3rem;
+.badge-top {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.hero-header h1 {
+    font-size: 3.5rem;
+    margin: 15px 0 5px 0;
     font-weight: 800;
-    background: linear-gradient(to right, var(--cyan), var(--purple));
+    background: linear-gradient(to right, #ffffff, #93c5fd, var(--cyan));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0 0 10px 0;
 }
 
-.tagline {
-    font-size: 1.2rem;
-    color: var(--text-muted);
+.subtitle {
+    font-size: 1.3rem;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+.meta-info {
+    margin-top: 15px;
+    color: var(--cyan);
+    font-size: 0.9rem;
     font-weight: 500;
 }
 
-.contact-info {
-    margin-top: 15px;
-    font-size: 0.95rem;
-    color: var(--cyan);
-    font-family: 'Courier New', Courier, monospace;
+.meta-info span {
+    margin: 0 10px;
 }
 
-/* --- Cartes de contenu (Cards) --- */
-.section {
+/* --- CARTE PRINCIPALE --- */
+.project-card {
     background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    padding: 40px;
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-light);
     border-radius: 24px;
-    border: 1px solid var(--border);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-    margin-bottom: 35px;
+    padding: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-.section h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-top: 0;
-    margin-bottom: 25px;
-    display: inline-block;
-    border-bottom: 3px solid var(--purple);
-    padding-bottom: 5px;
+.project-tag {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
-.section h3 {
-    font-size: 1.2rem;
+.project-header h2 {
+    font-size: 2rem;
+    margin: 15px 0 10px 0;
+}
+
+.project-desc {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    border-left: 4px solid var(--purple);
+    padding-left: 15px;
+    margin-bottom: 40px;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
     color: var(--cyan);
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-/* --- Listes personnalisées --- */
-.bullets {
+/* --- GRILLE DES VLANS --- */
+.vlan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.vlan-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.vlan-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.vlan-id {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.vlan-card h4 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+}
+
+.vlan-card p {
+    margin: 0 0 10px 0;
+    font-size: 0.85rem;
+    font-family: monospace;
+    color: var(--text-gray);
+}
+
+.vlan-desc {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    display: block;
+}
+
+/* Bordures colorées sur les cartes de VLANs pour attirer l'œil */
+.border-admin .vlan-id { background: rgba(244, 63, 94, 0.2); color: #f43f5e; }
+.border-it .vlan-id { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+.border-salaries .vlan-id { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+.border-transit .vlan-id { background: rgba(249, 115, 22, 0.2); color: #f97316; }
+.border-filtre .vlan-id { background: rgba(168, 85, 247, 0.2); color: #a855f7; }
+
+/* --- SECTIONS TECHNIQUES --- */
+.tech-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.tech-box {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.tech-box h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 10px;
+}
+
+.tech-box ul {
     list-style: none;
     padding-left: 0;
+    margin: 0;
 }
 
-.bullets li {
+.tech-box li {
     position: relative;
-    padding-left: 25px;
-    margin-bottom: 15px;
-    color: var(--text-muted);
+    padding-left: 20px;
+    margin-bottom: 12px;
+    color: var(--text-gray);
+    font-size: 0.95rem;
 }
 
-.bullets li::before {
-    content: "⚡";
+.tech-box li::before {
+    content: "→";
     position: absolute;
     left: 0;
-    top: 2px;
-    font-size: 0.9rem;
+    color: var(--purple);
+    font-weight: bold;
 }
 
-.bullets li strong {
-    color: #ffffff;
-    border-bottom: 1px dashed rgba(6, 182, 212, 0.4);
+.tech-box li strong {
+    color: var(--text-white);
 }
 
-/* Code en évidence (ex: blocs ou fichiers) */
 code {
-    background: #0f172a;
+    background: #000000;
     color: #f43f5e;
-    padding: 3px 8px;
-    border-radius: 6px;
+    padding: 2px 6px;
+    border-radius: 4px;
     font-family: monospace;
-    border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* --- Grille des compétences (Badges) --- */
-.skills-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.skill-category {
-    background: rgba(15, 23, 42, 0.4);
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid var(--border);
-}
-
-.skill-category strong {
-    color: var(--cyan);
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* --- Footer --- */
+/* --- FOOTER --- */
 footer {
     text-align: center;
-    padding: 40px 0;
-    color: rgba(255, 255, 255, 0.3);
+    margin-top: 50px;
+    color: rgba(255, 255, 255, 0.2);
     font-size: 0.85rem;
 }

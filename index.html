@@ -4,89 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | LucasB-SIO</title>
-    <!-- On conserve la liaison avec ton fichier style.css existant -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="resume-container">
-        <!-- En-tête / Profil -->
-        <header>
+    <!-- Arrière-plan décoratif pour l'effet moderne -->
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header class="hero-header">
+            <span class="badge-top">BTS SIO SISR</span>
             <h1>LucasB-SIO</h1>
-            <p class="tagline">Étudiant en BTS SIO (SISR) — Solutions d'Infrastructure, Systèmes et Réseaux</p>
-            <div class="contact-info">
-                <span>📍 Vitré, France</span> • 
-                <span>🌐 lucasb-sio.github.io</span>
+            <p class="subtitle">Solutions d'Infrastructure, Systèmes et Réseaux</p>
+            <div class="meta-info">
+                <span>📍 Vitré, France</span>
+                <span>🌐 Portfolio Officiel</span>
             </div>
         </header>
 
-        <!-- Section À Propos -->
-        <section class="section">
-            <h2>À propos</h2>
-            <p>Passionné par les technologies réseaux, la virtualisation et la sécurité des infrastructures. Ce portfolio me sert à documenter mes compétences techniques et les projets réels ou de laboratoire réalisés au cours de ma formation.</p>
-        </section>
+        <!-- SECTION PROJET -->
+        <main class="main-project">
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-tag">Stage @ Concentrix</span>
+                    <h2>Reconstruction & Sécurisation Réseau Multi-VLAN</h2>
+                </div>
+                
+                <p class="project-desc">
+                    Déploiement complet d'une infrastructure de laboratoire isolée visant à segmenter, filtrer et superviser les flux critiques d'une architecture d'entreprise.
+                </p>
 
-        <!-- Section Projet Majeur -->
-        <section class="section">
-            <h2>Projet Majeur : Reconstruction, Sécurisation et Supervision d'une Infrastructure Réseau Multi-VLAN</h2>
-            <p><em>Maquette d'étude isolée en laboratoire (Contexte de stage chez Concentrix)</em></p>
-            
-            <p>Ce projet consiste à concevoir une infrastructure réseau multi-VLAN étanche et résiliente en combinant des équipements physiques Cisco et des solutions open-source virtualisées.</p>
+                <!-- GRILLE DES 5 VLANS -->
+                <h3>📊 Architecture de Segmentation (5 VLANs)</h3>
+                <div class="vlan-grid">
+                    <div class="vlan-card border-admin">
+                        <span class="vlan-id">VLAN 10</span>
+                        <h4>VLAN-ADMIN / RH</h4>
+                        <p>192.168.10.0/24[cite: 1]</p>
+                        <span class="vlan-desc">Segment direction hautement sécurisé[cite: 1].</span>
+                    </div>
+                    <div class="vlan-card border-it">
+                        <span class="vlan-id">VLAN 15</span>
+                        <h4>VLAN-IT / Management</h4>
+                        <p>192.168.15.0/24[cite: 1]</p>
+                        <span class="vlan-desc">Dédié aux accès SSH et à la sonde PRTG[cite: 1].</span>
+                    </div>
+                    <div class="vlan-card border-salaries">
+                        <span class="vlan-id">VLAN 30</span>
+                        <h4>VLAN-SALARIES / WiFi</h4>
+                        <p>192.168.30.0/24[cite: 1]</p>
+                        <span class="vlan-desc">Zone principale des collaborateurs[cite: 1].</span>
+                    </div>
+                    <div class="vlan-card border-transit">
+                        <span class="vlan-id">VLAN 20</span>
+                        <h4>Transit Freebox</h4>
+                        <p>192.168.0.0/24[cite: 1]</p>
+                        <span class="vlan-desc">DMZ d'interconnexion vers le WAN[cite: 1].</span>
+                    </div>
+                    <div class="vlan-card border-filtre">
+                        <span class="vlan-id">VLAN 21</span>
+                        <h4>LAN Filtré</h4>
+                        <p>Interconnexion</p>
+                        <span class="vlan-desc">Collecte des flux après le pare-feu pivot[cite: 1].</span>
+                    </div>
+                </div>
 
-            <h3>1. Stratégie de Segmentation & Matrice d'Adressage</h3>
-            <p>Pour limiter les domaines de diffusion et appliquer le principe du moindre privilège, la maquette a été segmentée en 5 zones distinctes :</p>
-            <ul class="bullets">
-                <li><strong>VLAN 10 (VLAN-ADMIN / RH) :</strong> 192.168.10.0/24 — Passerelle : 192.168.10.254 (SVI C9300). Segment hautement sécurisé réservé à la direction et aux ressources humaines.</li>
-                <li><strong>VLAN 15 (VLAN-IT / Supervision) :</strong> 192.168.15.0/24 — Passerelle : 192.168.15.254 (SVI C9300). Segment technique dédié aux accès d'administration (SSH) et à la sonde PRTG.</li>
-                <li><strong>VLAN 30 (VLAN-SALARIES / WiFi) :</strong> 192.168.30.0/24 — Passerelle : 192.168.30.254 (SVI C9300). Zone principale pour les postes de travail utilisateurs standards.</li>
-                <li><strong>VLAN 20 (Transit_Freebox) :</strong> 192.168.0.0/24 — Liaison externe entre la Freebox FAI (192.168.0.254) et l'interface WAN du pare-feu.</li>
-                <li><strong>VLAN 21 (LAN Filtré) :</strong> Segment interne sécurisé collectant les flux locaux après traitement par le pare-feu et le proxy.</li>
-            </ul>
+                <!-- BLOCS TECHNIQUES INTERACTIFS -->
+                <div class="tech-sections">
+                    <div class="tech-box">
+                        <h4>🛠️ Infrastructures Physiques Cisco</h4>
+                        <ul>
+                            <li><strong>Cisco 2960 Plus :</strong> Procédure de <em>Password Recovery</em> via console, purge de la mémoire Flash (<code>vlan.dat</code>) et assignation des ports[cite: 1].</li>
+                            <li><strong>Cisco 9300 (Cœur L3) :</strong> Routage inter-VLAN via SVI et routage statique vers Internet[cite: 1].</li>
+                            <li><strong>Spanning-Tree (Rapid-PVST+) :</strong> Élection forcée du Root Bridge (priorité 4096), sécurisation via <strong>PortFast</strong> et <strong>BPDU Guard</strong>[cite: 1].</li>
+                            <li><strong>Sécurité d'Accès :</strong> Filtrage MAC par <strong>Port-Security Sticky</strong> et chiffrement des flux via <strong>SSHv2</strong>[cite: 1].</li>
+                        </ul>
+                    </div>
 
-            <h3>2. Configuration & Durcissement Équipements Cisco</h3>
-            <ul class="bullets">
-                <li><strong>Reconditionnement d'accès (Catalyst 2960 Plus) :</strong> Procédure physique de <em>Password Recovery</em> via console série, effacement des configurations résiduelles et de la base <code>vlan.dat</code>, assignation des ports d'accès (VLAN 10 et 30) et isolation native de l'IP de gestion (192.168.10.251).</li>
-                <li><strong>Routage Inter-VLAN de Niveau 3 :</strong> Centralisation et activation du routage IP sur le commutateur de cœur de réseau <strong>Cisco Catalyst 9300</strong> via interfaces virtuelles (SVI) et configuration d'une route statique par défaut (0.0.0.0/0) pointant vers la Freebox.</li>
-                <li><strong>Automatisation IP :</strong> Configuration du moteur DHCP sur le Catalyst 9300 avec exclusion stricte des plages d'adresses fixes stratégiques.</li>
-                <li><strong>Résolution des erreurs de liaison Trunk :</strong> Correction d'un bug d'alertes CDP <code>NATIVE_VLAN_MISMATCH</code> en réalignant le VLAN natif 1 des deux côtés et restriction explicite des VLANs autorisés (10, 15, 30).</li>
-                <li><strong>Optimisation Spanning-Tree (Rapid-PVST+) :</strong> Élection forcée du Pont Racine (Root Bridge) sur le C9300 (priorité abaissée à 4096). Activation de <strong>PortFast</strong> pour un accès immédiat au réseau et de <strong>BPDU Guard</strong> pour désactiver automatiquement tout port en cas de connexion d'un switch pirate.</li>
-                <li><strong>Sécurité de Couche 2 & Accès Distants :</strong> Activation du filtrage MAC par <strong>Port-Security Sticky</strong> (maximum 2 adresses, violation shutdown). Bannissement de Telnet au profit de <strong>SSHv2</strong> avec génération de clés RSA de 2048 bits pour sécuriser l'administration à distance.</li>
-            </ul>
+                    <div class="tech-box">
+                        <h4>🔒 Sécurité & Filtrage Avancé</h4>
+                        <ul>
+                            <li><strong>Proxmox VE :</strong> Mode <em>VLAN Aware</em> activé pour tagguer les flux 802.1Q des machines virtuelles[cite: 1].</li>
+                            <li><strong>OPNsense & Default Deny :</strong> Cloisonnement strict des flux (DNS 53, Proxy 3128, SSH 22 autorisés, le reste est bloqué)[cite: 1].</li>
+                            <li><strong>Proxy Squid & SSL Bump :</strong> Filtrage par catégories (listes de Toulouse) et déchiffrement des flux HTTPS à la volée (MitM) avec injection automatique du certificat via <code>policies.json</code>[cite: 1].</li>
+                            <li><strong>Bourrage HTML :</strong> Ajustement de la taille des pages de blocage à 750 octets pour forcer l'affichage sur Chrome/Edge[cite: 1].</li>
+                        </ul>
+                    </div>
 
-            <h3>3. Industrialisation de la Virtualisation & Sécurité (Proxmox / OPNsense)</h3>
-            <ul class="bullets">
-                <li><strong>Hyperviseur Proxmox VE :</strong> Raccordement en Trunk sur le C9300 (IP 192.168.0.199) et activation de l'option réseau <em>VLAN Aware</em> sur le pont virtuel <code>vmbr0</code> pour transférer les étiquettes 802.1Q aux VM.</li>
-                <li><strong>Pare-feu Pivot OPNsense :</strong> Déploiement en mode double attachement réseau (Interface WAN sur le VLAN 20, LAN sur le VLAN 21). Résolution par console noVNC d'une inversion d'interfaces logiques FreeBSD (IP statique fixée sur 192.168.0.252).</li>
-                <li><strong>Politique "Default Deny" :</strong> Blocage et destruction de toutes les sorties directes non autorisées vers Internet pour contraindre le flux à transiter par le proxy (Autorisation stricte des flux DNS sur le port 53, Proxy sur le port 3128, et SSH sur le port 22).</li>
-            </ul>
+                    <div class="tech-box">
+                        <h4>📈 Supervision Réseau</h4>
+                        <ul>
+                            <li><strong>PRTG Network Monitor :</strong> Intégration sur l'OS hôte pour contourner le verrouillage BIOS (Intel VT-x)[cite: 1].</li>
+                            <li><strong>Protocole SNMP v2c :</strong> Sécurisation par chaîne de communauté personnalisée et déploiement de capteurs clés (Ping, Trafic Trunk, System Health Cisco, RAM)[cite: 1].</li>
+                        </ul>
+                    </div>
+                </div>
 
-            <h3>4. Filtrage Web Avancé & Contournement Technique (Proxy Squid)</h3>
-            <ul class="bullets">
-                <li><strong>Contrôle d'Accès (ACL) :</strong> Proxy Squid déployé en mode explicite (port 3128) sur conteneur LXC, configuré avec intégration des listes noires par catégories de l'Université de Toulouse pour interdire les réseaux sociaux, jeux et streaming.</li>
-                <li><strong>Inspection SSL Bump (Homme du Milieu - MitM) :</strong> Activation du déchiffrement de flux HTTPS pour inspecter les requêtes chiffrées à la volée via une autorité de certification (CA de laboratoire) poussée sur le parc utilisateur (injection du fichier <code>policies.json</code> pour automatiser la confiance sur Mozilla Firefox).</li>
-                <li><strong>Astuce de Bourrage HTML (Troubleshooting) :</strong> Contournement de la restriction matérielle des navigateurs modernes (Chrome/Edge) qui masquent les pages d'erreur personnalisées inférieures à 512 octets, en injectant des lignes de commentaires invisibles pour artificiellement gonfler le fichier à 750 octets.</li>
-            </ul>
-
-            <h3>5. Supervision Industrielle PRTG Network Monitor</h3>
-            <ul class="bullets">
-                <li><strong>Adaptation d'Architecture :</strong> Suite au blocage du BIOS par un mot de passe constructeur inconnu empêchant l'activation d'Intel VT-x pour une VM dédiée, contournement par installation native de PRTG sur l'OS Windows hôte.</li>
-                <li><strong>Configuration SNMP v2c :</strong> Suppression de la communauté d'usine 'public' au profit d'une chaîne personnalisée restreinte en lecture seule sur le Catalyst 9300.</li>
-                <li><strong>Suivi Métrique :</strong> Déploiement de capteurs clés (Ping pour la latence, Trafic SNMP pour surveiller la liaison Trunk G1/0/1, et capteurs <em>Cisco System Health</em> / Mémoire vive pour prévenir la saturation matérielle).</li>
-            </ul>
-        </section>
-
-        <!-- Section Compétences Récapitulative -->
-        <section class="section">
-            <h2>Compétences Validées par ce Projet</h2>
-            <div class="skills-grid">
-                <div class="skill-category"><strong>Réseaux & Commutation :</strong> Cisco IOS / IOS XE, Routage Inter-VLAN (SVI), Trunking 802.1Q, DHCP Server, Rapid-PVST+, Port-Security Sticky, BPDU Guard, SSHv2.</div>
-                <div class="skill-category"><strong>Virtualisation, Sécurité & Système :</strong> Proxmox VE (VLAN Aware), OPNsense (Default Deny), Proxy Squid (ACL, Inspection SSL Bump, Injection CA via policies.json).</div>
-                <div class="skill-category"><strong>Supervision & Diagnostic :</strong> PRTG Network Monitor, Protocole SNMP v2c, Troubleshooting matériel (Password Recovery Cisco, Forçage de vitesse console 115200 bauds, Bourrage de paquets HTML).</div>
             </div>
-        </section>
+        </main>
 
+        <!-- FOOTER -->
         <footer>
-            <p>© 2026 — LucasB-SIO — Portfolio hébergé sur GitHub Pages</p>
+            <p>© 2026 — LucasB-SIO — Conçu avec HTML5 / CSS3 & hébergé sur GitHub Pages</p>
         </footer>
     </div>
 

@@ -3,98 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | LucasB-SIO</title>
+    <title>LucasB-SIO | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Arrière-plan décoratif pour l'effet moderne -->
+    <!-- Effet de projecteur tamisé d'arrière-plan -->
     <div class="bg-glow"></div>
 
     <div class="container">
-        <!-- HEADER -->
+        
+        <!-- HERO HEADER -->
         <header class="hero-header">
-            <span class="badge-top">BTS SIO SISR</span>
-            <h1>LucasB-SIO</h1>
-            <p class="subtitle">Solutions d'Infrastructure, Systèmes et Réseaux</p>
+            <span class="badge-top">Portfolio Professionnel</span>
+            <h1>Lucas B.</h1>
+            <p class="subtitle">Solutions d'Infrastructure, Systèmes et Réseaux (SISR)</p>
+            <div class="meta-info">
+                <span>STAGE DE FIN D'ÉTUDES</span>
+                <span>•</span>
+                <span>2026</span>
+            </div>
         </header>
 
-        <!-- SECTION PROJET -->
-        <main class="main-project">
-            <div class="project-card">
-                <div class="project-header">
-                    <span class="project-tag">Stage Concentrix</span>
-                    <h2>Reconstruction & Sécurisation Réseau Multi-VLAN</h2>
+        <!-- CARTE DE PROJET PRINCIPALE -->
+        <main class="project-card">
+            <div class="project-header">
+                <span class="project-tag">Projet Majeur</span>
+                <h2>Reconstruction & Sécurisation Réseau Multi-VLAN</h2>
+            </div>
+            
+            <p class="project-desc">
+                Déploiement complet d'une infrastructure de laboratoire isolée visant à segmenter, filtrer et superviser les flux critiques d'une architecture d'entreprise. Ce projet s'inspire directement des problématiques techniques rencontrées lors de mon stage chez Concentrix.
+            </p>
+
+            <h3>Architecture de Segmentation (5 VLANs)</h3>
+            
+            <!-- GRILLE DES VLANS -->
+            <div class="vlan-grid">
+                <!-- VLAN 10 -->
+                <div class="vlan-card border-admin">
+                    <span class="vlan-id">VLAN 10</span>
+                    <h4>ADMIN / RH</h4>
+                    <p>192.168.10.0/24</p>
+                    <span class="vlan-desc">Segment de la direction hautement sécurisé.</span>
                 </div>
+
+                <!-- VLAN 15 -->
+                <div class="vlan-card border-it">
+                    <span class="vlan-id">VLAN 15</span>
+                    <h4>IT / Management</h4>
+                    <p>192.168.15.0/24</p>
+                    <span class="vlan-desc">Dédié aux accès SSH et à la sonde de supervision PRTG.</span>
+                </div>
+
+                <!-- VLAN 30 -->
+                <div class="vlan-card border-salaries">
+                    <span class="vlan-id">VLAN 30</span>
+                    <h4>SALARIES / WiFi</h4>
+                    <p>192.168.30.0/24</p>
+                    <span class="vlan-desc">Zone principale des collaborateurs et utilisateurs.</span>
+                </div>
+
+                <!-- VLAN 20 -->
+                <div class="vlan-card border-transit">
+                    <span class="vlan-id">VLAN 20</span>
+                    <h4>Transit Freebox</h4>
+                    <p>192.168.0.0/24</p>
+                    <span class="vlan-desc">DMZ d'interconnexion isolée vers le WAN extérieur.</span>
+                </div>
+
+                <!-- VLAN 21 -->
+                <div class="vlan-card border-filtre">
+                    <span class="vlan-id">VLAN 21</span>
+                    <h4>LAN Filtré</h4>
+                    <p>Interconnexion</p>
+                    <span class="vlan-desc">Collecte des flux pivots après traitement du pare-feu.</span>
+                </div>
+            </div>
+
+            <!-- SECTIONS TECHNIQUES SPECIFIQUES -->
+            <div class="tech-sections">
                 
-                <p class="project-desc">
-                    Déploiement complet d'une infrastructure de laboratoire isolée visant à segmenter, filtrer et superviser les flux critiques d'une architecture d'entreprise.
-                </p>
-
-                <!-- GRILLE DES 5 VLANS -->
-                <h3>📊 Architecture de Segmentation (5 VLANs)</h3>
-                <div class="vlan-grid">
-                    <div class="vlan-card border-admin">
-                        <span class="vlan-id">VLAN 10</span>
-                        <h4>VLAN-ADMIN / RH</h4>
-                        <p>192.168.10.0/24[cite: 1]</p>
-                        <span class="vlan-desc">Segment direction hautement sécurisé.</span>
-                    </div>
-                    <div class="vlan-card border-it">
-                        <span class="vlan-id">VLAN 15</span>
-                        <h4>VLAN-IT</h4>
-                        <p>192.168.15.0/24[cite: 1]</p>
-                        <span class="vlan-desc">Dédié aux accès SSH et à la sonde PRTG.</span>
-                    </div>
-                    <div class="vlan-card border-salaries">
-                        <span class="vlan-id">VLAN 30</span>
-                        <h4>VLAN-SALARIES</h4>
-                        <p>192.168.30.0/24[cite: 1]</p>
-                        <span class="vlan-desc">Zone principale des collaborateurs.</span>
-                    </div>
-                    <div class="vlan-card border-transit">
-                        <span class="vlan-id">VLAN 20</span>
-                        <h4>Transit Freebox</h4>
-                        <p>192.168.0.0/24[cite: 1]</p>
-                        <span class="vlan-desc">DMZ d'interconnexion vers le WAN.</span>
-                    </div>
-                    <div class="vlan-card border-filtre">
-                        <span class="vlan-id">VLAN 21</span>
-                        <h4>LAN Filtré</h4>
-                        <p>Interconnexion</p>
-                        <span class="vlan-desc">Collecte des flux après le pare-feu pivot.</span>
-                    </div>
+                <div class="tech-box">
+                    <h4>Infrastructures Physiques Cisco</h4>
+                    <ul>
+                        <li><strong>Cisco 2960 Plus :</strong> Procédure de <em>Password Recovery</em> via console, purge complète de la mémoire Flash (<code>vlan.dat</code>) et assignation des ports d'accès.</li>
+                        <li><strong>Cisco 9300 (Cœur L3) :</strong> Configuration du routage inter-VLAN via SVI et mise en place d'une route statique par défaut vers Internet.</li>
+                        <li><strong>Spanning-Tree (Rapid-PVST+) :</strong> Élection forcée du Root Bridge (priorité 4096) et sécurisation des ports d'accès via les protocoles <strong>PortFast</strong> et <strong>BPDU Guard</strong>.</li>
+                        <li><strong>Sécurisation des accès :</strong> Filtrage strict des adresses MAC par <strong>Port-Security Sticky</strong> et chiffrement des flux d'administration via <strong>SSHv2</strong>.</li>
+                    </ul>
                 </div>
 
-                <!-- BLOCS TECHNIQUES INTERACTIFS -->
-                <div class="tech-sections">
-                    <div class="tech-box">
-                        <h4>🛠️ Infrastructures Physiques Cisco</h4>
-                        <ul>
-                            <li><strong>Cisco 2960 Plus :</strong> Procédure de <em>Password Recovery</em> via console, purge de la mémoire Flash (<code>vlan.dat</code>) et assignation des ports.</li>
-                            <li><strong>Cisco 9300 (Cœur L3) :</strong> Routage inter-VLAN via SVI et routage statique vers Internet.</li>
-                            <li><strong>Spanning-Tree (Rapid-PVST+) :</strong> Élection forcée du Root Bridge (priorité 4096), sécurisation via <strong>PortFast</strong> et <strong>BPDU Guard</strong>.</li>
-                            <li><strong>Sécurité d'Accès :</strong> Filtrage MAC par <strong>Port-Security Sticky</strong> et chiffrement des flux via <strong>SSHv2</strong>.</li>
-                        </ul>
-                    </div>
+                <div class="tech-box">
+                    <h4>Sécurité & Filtrage Avancé</h4>
+                    <ul>
+                        <li><strong>Hyperviseur Proxmox VE :</strong> Activation du mode <em>VLAN Aware</em> sur le pont virtuel Linux pour tagguer correctement les flux 802.1Q des machines.</li>
+                        <li><strong>Pare-feu OPNsense :</strong> Configuration en mode <em>Default Deny</em> pour un cloisonnement strict (flux DNS 53, Proxy 3128 et SSH 22 explicitement autorisés, le reste est jeté).</li>
+                        <li><strong>Proxy Squid & SSL Bump :</strong> Filtrage web par catégories basé sur les listes de Toulouse et déchiffrement des flux HTTPS sécurisés à la volée (MitM).</li>
+                        <li><strong>Déploiement du Certificat :</strong> Automatisation de l'injection du certificat CA sur les postes clients via le fichier de stratégie GPO <code>policies.json</code>.</li>
+                        <li><strong>Ajustement HTML :</strong> Bourrage artificiel des fichiers HTML des pages de blocage à une taille supérieure à 750 octets pour forcer l'affichage sur Google Chrome et Microsoft Edge.</li>
+                    </ul>
+                </div>
 
-                    <div class="tech-box">
-                        <h4>🔒 Sécurité & Filtrage Avancé</h4>
-                        <ul>
-                            <li><strong>Proxmox VE :</strong> Mode <em>VLAN Aware</em> activé pour tagguer les flux 802.1Q des machines virtuelles.</li>
-                            <li><strong>OPNsense & Default Deny :</strong> Cloisonnement strict des flux (DNS 53, Proxy 3128, SSH 22 autorisés, le reste est bloqué).</li>
-                            <li><strong>Proxy Squid & SSL Bump :</strong> Filtrage par catégories (listes de Toulouse) et déchiffrement des flux HTTPS à la volée (MitM) avec injection automatique du certificat via <code>policies.json</code>.</li>
-                            <li><strong>Bourrage HTML :</strong> Ajustement de la taille des pages de blocage à 750 octets pour forcer l'affichage sur Chrome/Edge.</li>
-                        </ul>
-                    </div>
-
-                    <div class="tech-box">
-                        <h4>📈 Supervision Réseau</h4>
-                        <ul>
-                            <li><strong>PRTG Network Monitor :</strong> Intégration sur l'OS hôte pour contourner le verrouillage BIOS (Intel VT-x)</li>
-                            <li><strong>Protocole SNMP v2c :</strong> Sécurisation par chaîne de communauté personnalisée et déploiement de capteurs clés (Ping, Trafic Trunk, System Health Cisco, RAM).</li>
-                        </ul>
-                    </div>
+                <div class="tech-box">
+                    <h4>Supervision Réseau</h4>
+                    <ul>
+                        <li><strong>PRTG Network Monitor :</strong> Installation logicielle sur l'OS hôte Windows pour contourner l'absence de support d'imbrication de la virtualisation (verrouillage BIOS Intel VT-x).</li>
+                        <li><strong>Protocole SNMP v2c :</strong> Configuration et sécurisation des agents via une chaîne de communauté personnalisée.</li>
+                        <li><strong>Suivi des métriques :</strong> Supervision active des commutateurs Cisco (Ping, trafic réseau sur les interfaces de Trunk, RAM et CPU).</li>
+                    </ul>
                 </div>
 
             </div>
@@ -102,7 +119,7 @@
 
         <!-- FOOTER -->
         <footer>
-            <p>© 2026 — LucasB-SIO — Conçu avec HTML5 / CSS3 & hébergé sur GitHub Pages</p>
+            <p>© 2026 — LucasB-SIO — Hébergé sur GitHub Pages</p>
         </footer>
     </div>
 

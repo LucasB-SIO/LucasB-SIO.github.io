@@ -3,42 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio - SIO ISR</title>
-    <!-- Liaison avec le fichier de style CSS -->
+    <title>Portfolio | LucasB-SIO</title>
+    <!-- On lie le fichier CSS que tu vas créer juste après -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
+    <div class="resume-container">
+        <!-- En-tête / Profil -->
+        <header>
             <h1>LucasB-SIO</h1>
-            <p class="subtitle">Futur Administrateur Systèmes et Réseaux</p>
-        </div>
-    </header>
+            <p class="tagline">Étudiant en BTS SIO (SISR) — Solutions d'Infrastructure, Systèmes et Réseaux</p>
+            <div class="contact-info">
+                <span>📍 Vitré, France</span> • 
+                <span>🌐 lucasb-sio.github.io</span>
+            </div>
+        </header>
 
-    <main class="main-container">
-        
-        <section class="card">
-            <h2>À propos de moi</h2>
-            <p>Étudiant en BTS SIO option SISR, je me passionne pour les infrastructures réseaux, la virtualisation et la cybersécurité. À la rentrée, je vais documenter mes compétences et mes projets ici.</p>
+        <!-- Section À Propos -->
+        <section class="section">
+            <h2>À propos</h2>
+            <p>Passionné par les technologies réseaux, la virtualisation et la sécurité des infrastructures. Ce portfolio me sert à documenter mes compétences techniques et les projets réalisés au cours de ma formation.</p>
         </section>
 
-        <section class="card">
-            <h2>Mon Projet Réseau (Lab)</h2>
-            <p class="project-subtitle">Stage effectué chez Concentrix Vitré</p>
-            <ul class="skills-list">
-                <li><strong>Routage L3 & Cisco :</strong> Configuration d'un commutateur Catalyst 9300 (SVI, DHCP, Trunk 802.1Q).</li>
-                <li><strong>Virtualisation & OPNsense :</strong> Déploiement de Proxmox VE et filtrage en mode Default Deny.</li>
-                <li><strong>Proxy Squid :</strong> Inspection SSL Bump, filtrage de flux et règles ACL.</li>
-                <li><strong>Supervision :</strong> Monitoring des équipements sous PRTG Network Monitor via SNMP v2c.</li>
-            </ul>
+        <!-- Section Expérience / Stage -->
+        <section class="section">
+            <h2>Projets & Expériences</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Création d’une infrastructure réseau isolée (Lab)</span>
+                    <span class="item-date">Stage — Concentrix</span>
+                </div>
+                <ul class="bullets">
+                    <li><strong>Routage L3 & Interconnexion :</strong> Configuration du routage inter-VLAN (SVI) sur switch Cisco Catalyst 9300, routes statiques WAN et pools DHCP.</li>
+                    <li><strong>Virtualisation & Sécurité :</strong> Déploiement de Proxmox VE (VLAN Aware) et d'un pare-feu virtuel OPNsense en mode Default Deny.</li>
+                    <li><strong>Flux & Gestion Proxy :</strong> Filtrage web via proxy Squid, inspection HTTPS (SSL Bump) et injection de certificats.</li>
+                    <li><strong>Supervision :</strong> Monitoring en temps réel de la bande passante et des ressources via PRTG (SNMP v2c).</li>
+                </ul>
+            </div>
         </section>
 
-    </main>
+        <!-- Section Compétences -->
+        <section class="section">
+            <h2>Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category"><strong>Réseaux :</strong> Routing Cisco, VLAN (802.1Q), SVI, DHCP, Sécurité L2 (Port-Security, BPDU Guard).</div>
+                <div class="skill-category"><strong>Systèmes & Sécurité :</strong> Proxmox VE, Pare-feu OPNsense, Proxy Squid (SSL Bump).</div>
+                <div class="skill-category"><strong>Supervision & Outils :</strong> PRTG Network Monitor, SNMP v2c, Git, GitHub Pages.</div>
+            </div>
+        </section>
 
-    <footer>
-        <p>© 2026 - LucasB-SIO - Portfolio hébergé sur GitHub Pages</p>
-    </footer>
+        <footer>
+            <p>© 2026 — LucasB-SIO — Généré via GitHub Pages</p>
+        </footer>
+    </div>
 
 </body>
 </html>

@@ -1,16 +1,16 @@
-/* --- Design Moderne "Glassmorphism & Glow" --- */
+/* --- Direction Artistique : Cinéma d'Auteur (Lynch / Kubrick / Tarkovski) --- */
 :root {
-    --bg-main: #030712;
-    --card-bg: rgba(17, 24, 39, 0.7);
-    --border-light: rgba(255, 255, 255, 0.08);
-    --text-white: #ffffff;
-    --text-gray: #9ca3af;
+    --bg-main: #060608;             /* Un noir asphalte très profond, comme une salle obscure */
+    --card-bg: rgba(13, 13, 18, 0.95); /* Des blocs sombres et denses */
+    --border-light: rgba(255, 255, 255, 0.05);
+    --text-white: #f4f4f6;          /* Un blanc feutré, moins agressif */
+    --text-gray: #71717a;           /* Gris argenté pour les descriptions */
     
-    /* Couleurs Thématiques */
-    --cyan: #06b6d4;
-    --purple: #8b5cf6;
-    --emerald: #10b981;
-    --orange: #f97316;
+    /* Palette de contrastes inspirée du cinéma noir et de la Red Room */
+    --cyan: #e2e8f0;                /* Remplacé par un ton blanc/argent texturé */
+    --purple: #991b1b;              /* Le rouge profond lynchien en repère visuel */
+    --emerald: #52525b;
+    --orange: #b45309;
 }
 
 body {
@@ -20,146 +20,168 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    letter-spacing: 0.02em; /* Espacement des lettres plus élégant style générique */
 }
 
-/* Effet de lumière diffuse en arrière-plan */
+/* Effet de projecteur tamisé en arrière-plan (évocation d'un faisceau de cinéma) */
 .bg-glow {
     position: absolute;
-    top: -150px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 600px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 100%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(153, 27, 27, 0.12) 0%, rgba(15, 23, 42, 0.02) 60%, transparent 100%);
     z-index: -1;
     pointer-events: none;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 60px 20px;
 }
 
-/* --- HERO HEADER --- */
+/* --- HERO HEADER (Style Titre de Film / Minimaliste & Imposant) --- */
 .hero-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 .badge-top {
-    background: rgba(139, 92, 246, 0.15);
-    color: #a78bfa;
-    padding: 6px 16px;
-    border-radius: 100px;
-    font-size: 0.85rem;
+    background: transparent;
+    color: var(--text-gray);
+    padding: 4px 12px;
+    border-radius: 0; /* Formes rectangulaires strictes à la Kubrick */
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 1px;
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    letter-spacing: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
 }
 
 .hero-header h1 {
-    font-size: 3.5rem;
-    margin: 15px 0 5px 0;
-    font-weight: 800;
-    background: linear-gradient(to right, #ffffff, #93c5fd, var(--cyan));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 3.8rem;
+    margin: 25px 0 10px 0;
+    font-weight: 700;
+    letter-spacing: 12px; /* Grand espacement typographique des titres de films */
+    color: #ffffff;
+    text-transform: uppercase;
+    background: none;
+    -webkit-text-fill-color: initial;
 }
 
 .subtitle {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: var(--text-gray);
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
 }
 
 .meta-info {
-    margin-top: 15px;
-    color: var(--cyan);
-    font-size: 0.9rem;
-    font-weight: 500;
+    margin-top: 25px;
+    color: #991b1b; /* Accent rouge dramatique */
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 .meta-info span {
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
-/* --- CARTE PRINCIPALE --- */
+/* --- STRUCTURE PRINCIPALE (Le Monolithe) --- */
 .project-card {
     background: var(--card-bg);
-    backdrop-filter: blur(16px);
-    border: 1px solid var(--border-light);
-    border-radius: 24px;
-    padding: 40px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    backdrop-filter: none;
+    border: 1px solid #1e1e24; /* Bordures nettes et sombres */
+    border-radius: 0px; /* Suppression des arrondis pour un aspect architectural lourd */
+    padding: 50px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
 }
 
 .project-tag {
-    background: rgba(16, 185, 129, 0.15);
-    color: #34d399;
-    padding: 4px 12px;
-    border-radius: 6px;
-    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 0;
+    font-size: 0.75rem;
     font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .project-header h2 {
-    font-size: 2rem;
-    margin: 15px 0 10px 0;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 20px 0 15px 0;
+    letter-spacing: 0.5px;
+    color: #ffffff;
 }
 
 .project-desc {
-    color: var(--text-gray);
+    color: #d4d4d8;
     font-size: 1.1rem;
-    border-left: 4px solid var(--purple);
-    padding-left: 15px;
-    margin-bottom: 40px;
+    line-height: 1.7;
+    border-left: 2px solid #991b1b; /* Ligne verticale écarlate style Lynch */
+    padding-left: 20px;
+    margin-bottom: 50px;
+    font-weight: 300;
 }
 
 .project-card h3 {
-    font-size: 1.3rem;
-    color: var(--cyan);
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
 }
 
-/* --- GRILLE DES VLANS --- */
+/* --- GRILLE DES VLANS (Look Pellicule / Storyboard Géométrique) --- */
 .vlan-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .vlan-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border-light);
-    border-radius: 16px;
+    background: #000000; /* Noir pur à l'intérieur des cases */
+    border: 1px solid #1e1e24;
+    border-radius: 0px;
     padding: 20px;
-    transition: transform 0.2s, background-color 0.2s;
+    transition: border-color 0.4s ease, transform 0.4s ease;
 }
 
 .vlan-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
+    transform: none; /* Pas de mouvement "gadget tech" */
+    border-color: #ffffff; /* Seule la lumière blanche souligne le survol */
 }
 
 .vlan-id {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     display: inline-block;
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    padding: 2px 6px;
+    border-radius: 0;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
 .vlan-card h4 {
     margin: 0 0 5px 0;
     font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 .vlan-card p {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
     font-size: 0.85rem;
     font-family: monospace;
     color: var(--text-gray);
@@ -168,37 +190,42 @@ body {
 .vlan-desc {
     font-size: 0.8rem;
     color: var(--text-gray);
+    line-height: 1.4;
     display: block;
 }
 
-/* Bordures colorées sur les cartes de VLANs pour attirer l'œil */
-.border-admin .vlan-id { background: rgba(244, 63, 94, 0.2); color: #f43f5e; }
-.border-it .vlan-id { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
-.border-salaries .vlan-id { background: rgba(16, 185, 129, 0.2); color: #10b981; }
-.border-transit .vlan-id { background: rgba(249, 115, 22, 0.2); color: #f97316; }
-.border-filtre .vlan-id { background: rgba(168, 85, 247, 0.2); color: #a855f7; }
+/* Teintes argentées et sombres pour les badges (Clins d'œil chromatiques discrets) */
+.border-admin .vlan-id { background: rgba(153, 27, 27, 0.2); color: #ef4444; }     /* Rouge Sombre */
+.border-it .vlan-id { background: rgba(30, 41, 59, 0.5); color: #94a3b8; }        /* Gris Bleu de minuit */
+.border-salaries .vlan-id { background: rgba(255, 255, 255, 0.08); color: #f4f4f5; } /* Blanc / Argent */
+.border-transit .vlan-id { background: rgba(120, 53, 4, 0.3); color: #f59e0b; }      /* Ambre Kubrick */
+.border-filtre .vlan-id { background: rgba(88, 28, 135, 0.3); color: #c084fc; }     /* Violet crépuscule */
 
-/* --- SECTIONS TECHNIQUES --- */
+/* --- SECTIONS TECHNIQUES (Style Script / Clarté Dramatique) --- */
 .tech-sections {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 35px;
 }
 
 .tech-box {
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid var(--border-light);
-    border-radius: 16px;
-    padding: 25px;
+    background: transparent;
+    border: none;
+    border-top: 1px solid #1e1e24; /* Séparations horizontales nettes */
+    border-bottom: 1px solid #1e1e24;
+    padding: 30px 0;
+    border-radius: 0;
 }
 
 .tech-box h4 {
     margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+    font-weight: 500;
     color: #ffffff;
-    border-bottom: 1px solid var(--border-light);
-    padding-bottom: 10px;
+    border-bottom: none;
+    padding-bottom: 0;
+    letter-spacing: 1px;
 }
 
 .tech-box ul {
@@ -209,36 +236,43 @@ body {
 
 .tech-box li {
     position: relative;
-    padding-left: 20px;
-    margin-bottom: 12px;
-    color: var(--text-gray);
+    padding-left: 25px;
+    margin-bottom: 16px;
+    color: #a1a1aa;
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
+/* Le marqueur de liste devient un tiret géométrique épuré */
 .tech-box li::before {
-    content: "→";
+    content: "—";
     position: absolute;
     left: 0;
-    color: var(--purple);
-    font-weight: bold;
+    color: #991b1b;
+    font-weight: light;
 }
 
 .tech-box li strong {
-    color: var(--text-white);
+    color: #ffffff;
+    font-weight: 500;
 }
 
 code {
     background: #000000;
-    color: #f43f5e;
+    color: #ef4444; /* Code couleur rouge alerte */
     padding: 2px 6px;
-    border-radius: 4px;
+    border-radius: 0;
     font-family: monospace;
+    font-size: 0.85rem;
+    border: 1px solid #1e1e24;
 }
 
-/* --- FOOTER --- */
+/* --- GENERIQUE DE FIN (FOOTER) --- */
 footer {
     text-align: center;
-    margin-top: 50px;
-    color: rgba(255, 255, 255, 0.2);
-    font-size: 0.85rem;
+    margin-top: 70px;
+    color: var(--text-gray);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
